@@ -1,4 +1,4 @@
-package Core_Java;
+package Core_Java.Foundation_program;
 
 public class Type_cast {
     public static void main(String[] args) {

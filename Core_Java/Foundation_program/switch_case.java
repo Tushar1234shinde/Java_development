@@ -1,4 +1,4 @@
-package Core_Java;
+package Core_Java.Foundation_program;
 import java.util.Scanner;
 
 public class switch_case {
