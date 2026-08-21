@@ -2,37 +2,27 @@ package Core_Java.Class_And_Object;
 
 public class Calculator {
 
-    public void simp_Add()
-    {
-        int a=1;
-        int b=2;
-        int c=a+b;
-        System.out.println("Addition of two numbers is: "+c);
+    public void printSimpleAddition() {
+        System.out.println("Addition of two numbers is: " + add(1, 2));
     }
     
-    public int add(int a, int b)
-    {
-        int c=a+b;
-        return c;
+    public int add(int firstNumber, int secondNumber) {
+        return firstNumber + secondNumber;
     }
 
-    public int sub(int a, int b)
-    {
-        int c=a-b;
-       return c;
-
+    public int subtract(int firstNumber, int secondNumber) {
+        return firstNumber - secondNumber;
     }
-    public void dis_sub(int c){
-        System.out.println("Subtraction of two numbers is: "+c);
-        
+    public void printSubtraction(int result) {
+        System.out.println("Subtraction of two numbers is: " + result);
     }
     public static void main(String[] args) {
-        Calculator c=new Calculator();
-        c.simp_Add();
-        int result = c.add(1, 2);
+        Calculator calculator = new Calculator();
+        calculator.printSimpleAddition();
+        int result = calculator.add(1, 2);
         System.out.println("Addition of two numbers is: " + result);
-        int subResult = c.sub(5, 3);
-        c.dis_sub(subResult);
+        int subResult = calculator.subtract(5, 3);
+        calculator.printSubtraction(subResult);
     }
 }
 

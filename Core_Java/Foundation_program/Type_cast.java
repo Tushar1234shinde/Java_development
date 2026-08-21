@@ -4,20 +4,21 @@ public class Type_cast {
     public static void main(String[] args) {
         
     
-    int a=257;
-    byte b=(byte)a;
+    int number = 257;
+    byte narrowedNumber = (byte) number;
 
-    float f=5.6f;
-    int i=(int)f;
+    float decimalNumber = 5.6f;
+    int truncatedNumber = (int) decimalNumber;
 
-    byte a1=10,b1=30;
-    int result=a1*b1;
+    byte firstByte = 10;
+    byte secondByte = 30;
+    int product = firstByte * secondByte;
 
 
-    System.out.println("Value of a: "+a);
-    System.out.println("Value of b: "+b);
-    System.out.println("Value of f: "+f);
-    System.out.println("Value of i: "+i);
-    System.out.println("Value of result: "+result);
+    System.out.println("Value of number: " + number);
+    System.out.println("Narrowed byte value: " + narrowedNumber);
+    System.out.println("Value of decimalNumber: " + decimalNumber);
+    System.out.println("Truncated integer value: " + truncatedNumber);
+    System.out.println("Product of bytes: " + product);
 }
 }

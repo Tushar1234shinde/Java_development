@@ -2,8 +2,8 @@ package Core_Java.Constructer;
 
 public class Default_Constructor {
     
-    String name;
-    int age;
+    private final String name;
+    private final int age;
 
     // Default constructor
     public Default_Constructor() {
@@ -13,7 +13,11 @@ public class Default_Constructor {
 
     public static void main(String[] args) {
         Default_Constructor person = new Default_Constructor();
-        System.out.println("Name: " + person.name);
-        System.out.println("Age: " + person.age);
+        System.out.println(person);
+    }
+
+    @Override
+    public String toString() {
+        return "Name: " + name + ", Age: " + age;
     }
 }

@@ -27,6 +27,7 @@ public class Array_Interview_Patterns {
 
     // 1. Hash map / complement lookup: Two Sum in O(n) time and O(n) space.
     public static int[] twoSum(int[] numbers, int target) {
+        requireArray(numbers, "numbers");
         Map<Integer, Integer> indexByValue = new HashMap<>();
         for (int i = 0; i < numbers.length; i++) {
             int complement = target - numbers[i];
@@ -40,6 +41,7 @@ public class Array_Interview_Patterns {
 
     // 2. Sliding window: fixed-size subarray problems in O(n) time, O(1) space.
     public static int maxSumOfKElements(int[] numbers, int k) {
+        requireArray(numbers, "numbers");
         if (k <= 0 || k > numbers.length) {
             throw new IllegalArgumentException("k must be between 1 and array length");
         }
@@ -59,6 +61,7 @@ public class Array_Interview_Patterns {
 
     // 3. Prefix sum + frequency map: count subarrays with a target sum in O(n).
     public static int countSubarraysWithSum(int[] numbers, int target) {
+        requireArray(numbers, "numbers");
         Map<Integer, Integer> prefixFrequency = new HashMap<>();
         prefixFrequency.put(0, 1);
 
@@ -74,6 +77,7 @@ public class Array_Interview_Patterns {
 
     // 4. Kadane's algorithm: maximum-sum contiguous subarray in O(n), O(1) space.
     public static int maxSubarraySum(int[] numbers) {
+        requireArray(numbers, "numbers");
         if (numbers.length == 0) {
             throw new IllegalArgumentException("Array must not be empty");
         }
@@ -90,6 +94,7 @@ public class Array_Interview_Patterns {
     // 5. Three pointers / Dutch National Flag: sort an array containing only 0, 1, and 2.
     // Time O(n), extra space O(1). Useful for in-place partitioning problems.
     public static void sortZeroOneTwo(int[] numbers) {
+        requireArray(numbers, "numbers");
         int low = 0;
         int middle = 0;
         int high = numbers.length - 1;
@@ -109,6 +114,7 @@ public class Array_Interview_Patterns {
 
     // 6. Binary search: search a sorted array in O(log n) time.
     public static int binarySearch(int[] sortedNumbers, int target) {
+        requireArray(sortedNumbers, "sortedNumbers");
         int left = 0;
         int right = sortedNumbers.length - 1;
 
@@ -130,5 +136,11 @@ public class Array_Interview_Patterns {
         int temporary = numbers[first];
         numbers[first] = numbers[second];
         numbers[second] = temporary;
+    }
+
+    private static void requireArray(int[] numbers, String parameterName) {
+        if (numbers == null) {
+            throw new IllegalArgumentException(parameterName + " must not be null");
+        }
     }
 }

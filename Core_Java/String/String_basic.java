@@ -17,6 +17,7 @@ public class String_basic {
         for (int i = 0; i < length; i++) {
             System.out.print(str.charAt(i) + " ");
         }
+        System.out.println();
 
 
         //String are immutable in java, so we cannot change the value of a string once it is created.

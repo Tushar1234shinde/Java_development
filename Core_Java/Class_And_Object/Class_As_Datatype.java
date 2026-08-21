@@ -11,19 +11,23 @@ public class Class_As_Datatype {
         System.out.println("Object created: " + obj);
 
         // Creating an object of the Students class
-        Students student1 = new Students();
-        student1.name = "John";
-        student1.age = 20;
-        student1.grade = "A";
-
-        
+        Students student = new Students("John", 20, "A");
+        System.out.println(student);
     }
 }
- class Students{
-    // Class variables (attributes)
-    String name;
-    int age;
-    String grade;
+class Students {
+    private final String name;
+    private final int age;
+    private final String grade;
 
-   
+    Students(String name, int age, String grade) {
+        this.name = name;
+        this.age = age;
+        this.grade = grade;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{name='%s', age=%d, grade='%s'}".formatted(name, age, grade);
+    }
 }

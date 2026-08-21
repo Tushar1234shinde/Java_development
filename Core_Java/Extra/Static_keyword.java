@@ -2,7 +2,7 @@ package Core_Java.Extra;
 
 public class Static_keyword {
     
-    static int count = 0; // Static variable
+    private static int count;
 
     // Static method
     public static void incrementCount() {
@@ -23,7 +23,7 @@ public class Static_keyword {
 
     static {
         System.out.println("Static block executed. Initializing static variables.");
-        count = 10; // Initializing static variable
+        count = 10;
     }
 
 }

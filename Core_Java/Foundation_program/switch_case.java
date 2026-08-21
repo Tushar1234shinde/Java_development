@@ -4,36 +4,18 @@ import java.util.Scanner;
 public class switch_case {
 
     public static void main(String[] args){
-
         try (Scanner scanner = new Scanner(System.in)) {
-            int day=scanner.nextInt();
-
-            switch(day){
-                case 1:
-                    System.out.println("Monday");
-                    break;
-                case 2:
-                    System.out.println("Tuesday");
-                    break;
-                case 3:
-                    System.out.println("Wednesday");
-                    break;
-                case 4:
-                    System.out.println("Thursday");
-                    break;
-                case 5:
-                    System.out.println("Friday");
-                    break;
-                case 6:
-                    System.out.println("Saturday");
-                    break;
-                case 7:
-                    System.out.println("Sunday");
-                    break;
-                default:
-                    System.out.println("Invalid day");
+            System.out.print("Enter a day number (1-7): ");
+            if (!scanner.hasNextInt()) {
+                System.out.println("Please enter a whole number.");
+                return;
             }
+            System.out.println(dayName(scanner.nextInt()));
         }
     }
-    
+
+    private static String dayName(int day) {
+        String[] days = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
+        return day >= 1 && day <= days.length ? days[day - 1] : "Invalid day";
+    }
 }
